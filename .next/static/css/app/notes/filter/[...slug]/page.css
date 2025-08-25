@@ -1,0 +1,268 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./components/SearchBox/SearchBox.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.SearchBox_input__0g6b5 {
+    flex: 1 1;
+    max-width: 240px;
+    padding: 6px 12px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./components/Pagination/Pagination.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************/
+.Pagination_pagination__O7JWM {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin: 16px 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Pagination_pagination__O7JWM li {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 36px;
+    height: 36px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.Pagination_pagination__O7JWM li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #0d6efd;
+    font-size: 14px;
+}
+
+.Pagination_pagination__O7JWM li:hover {
+    background-color: #e9ecef;
+}
+
+.Pagination_pagination__O7JWM li.Pagination_active__awQnD:hover {
+    background-color: #0d6efd;
+}
+
+.Pagination_active__awQnD {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.Pagination_active__awQnD a {
+    color: #fff !important;
+    font-weight: 500;
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./components/NoteList/NoteList.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.NoteList_list__shWPg {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 16px;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.NoteList_listItem__SuGUK {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+}
+
+.NoteList_title__yrB3L {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #212529;
+}
+
+.NoteList_content__K8ntu {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 14px;
+    color: #495057;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.NoteList_button__J1AiO {
+    align-self: flex-end;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.NoteList_button__J1AiO:hover {
+    background-color: #bb2d3b;
+}
+
+.NoteList_footer__lWpqj {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.NoteList_tag__obj_m {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #0d6efd;
+    background-color: #e7f1ff;
+    border: 1px solid #b6d4fe;
+    border-radius: 12px;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./components/Modal/Modal.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+.Modal_backdrop__bLvvH {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 37, 41, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.Modal_modal__nSuXm {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./components/NoteForm/NoteForm.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.NoteForm_form__kBK_0 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.NoteForm_formGroup__bS5ba {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 500;
+    color: #212529;
+}
+
+.NoteForm_input__28hgd,
+.NoteForm_textarea__kzing,
+.NoteForm_select__Go8Rq {
+    margin-top: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    resize: none;
+}
+
+.NoteForm_actions__aG_Xr {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.NoteForm_submitButton__vSvUI {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.NoteForm_submitButton__vSvUI:hover {
+    background-color: #0b5ed7;
+}
+
+.NoteForm_submitButton__vSvUI:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.NoteForm_cancelButton__c33li {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #f8f9fa;
+    color: #212529;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.NoteForm_cancelButton__c33li:hover {
+    background-color: #e2e6ea;
+}
+
+.NoteForm_error__swtoj {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 4px;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/home.modal.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
+.main {
+  flex: 1 1;
+}
+
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0px auto;
+  padding: 0 16px 16px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.description {
+  font-size: 18px;
+  color: #444444;
+  line-height: 28px;
+  margin-bottom: 16px;
+}
