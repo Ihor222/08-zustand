@@ -6,5 +6,5 @@ export interface Note {
   content: string;
   createdAt: string; 
   updatedAt: string; 
-  tag: NoteTag;      // тепер обов'язкове і строго типізоване
+  tag: NoteTag;      
 }

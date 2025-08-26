@@ -1,21 +1,20 @@
-import { QueryClient, dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { fetchNotes } from "@/lib/api";
-import type { NoteTag } from "@/types/note";
 import NotesClient from "./Notes.client";
 import type { Metadata } from "next";
+import type { NoteTag } from "@/types/note";
 
-type PageProps = {
-  params: { slug?: string[] };
-};
+interface NotesProps {
+  params: Promise<{ slug?: string[] }>;
+}
 
-export async function generateMetadata(
-  { params }: PageProps
-): Promise<Metadata> {
-  const slug = params?.slug?.[0];
-  const filter = slug ? slug : "All";
+export const generateMetadata = async ({ params }: NotesProps): Promise<Metadata> => {
+  const { slug } = await params;
+  const tag = slug?.[0] && slug[0].toLowerCase() !== "all" ? slug[0] : "All";
 
-  const title = `Notes filtered by "${filter}" | NoteHub`;
-  const description = `Browse notes filtered by "${filter}". Discover only the content that matches your chosen filter.`;
+  const title = tag !== "All" ? `Notes filtered by ${tag}` : "All notes";
+  const description =
+    tag !== "All"
+      ? `Browse notes filtered by the ${tag} tag.`
+      : "Browse all available notes without filters.";
 
   return {
     title,
@@ -23,44 +22,33 @@ export async function generateMetadata(
     openGraph: {
       title,
       description,
-      url: `/notes/filter/${filter}`,
+      url: `/notes/filter/${tag}`,
       images: [
         {
           url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
           width: 1200,
           height: 630,
-          alt: `Notes filtered by ${filter}`,
+          alt: tag,
         },
       ],
     },
   };
-}
+};
 
-export default async function NotesFilterPage({ params }: PageProps) {
-  const { slug } = params;
+export default async function NotesFilterPage({ params }: NotesProps) {
+  const { slug } = await params;
 
-  const rawTag: "All" | NoteTag = slug?.[0] ? (slug[0] as NoteTag) : "All";
+  const tag = slug?.[0] && slug[0].toLowerCase() !== "all" ? slug[0] : "All";
+  const tagValue: NoteTag | "All" = tag as NoteTag | "All";
 
-  const effectiveTag: NoteTag | undefined =
-    rawTag === "All" ? undefined : rawTag;
-
-  const pageStart = 1;
-  const searchTerm = "";
-
-  const qc = new QueryClient();
-
-  await qc.prefetchQuery({
-    queryKey: ["notes", { page: pageStart, search: searchTerm, tag: rawTag }],
-    queryFn: () => fetchNotes(pageStart, searchTerm, effectiveTag),
-  });
+  const initialPage = 1;
+  const initialQuery = "";
 
   return (
-    <HydrationBoundary state={dehydrate(qc)}>
-      <NotesClient
-        initialPage={pageStart}
-        initialQuery={searchTerm}
-        initialTag={rawTag}
-      />
-    </HydrationBoundary>
+    <NotesClient
+      initialPage={initialPage}
+      initialQuery={initialQuery}
+      initialTag={tagValue}
+    />
   );
 }
