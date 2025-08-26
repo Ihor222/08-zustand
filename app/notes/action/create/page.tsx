@@ -25,8 +25,8 @@ function CreateNotePage() {
     <main className={styles.main}>
       <section className={styles.container}>
         <h1 className={styles.title}>Add a new note</h1>
-        <NoteForm onCloseModal={() => {}} />
-      </section>
+        {}
+          <NoteForm onCloseModal={() => {}} />      </section>
     </main>
   );
 }
