@@ -9,7 +9,7 @@ import SearchBox from "@/components/SearchBox/SearchBox";
 import Pagination from "@/components/Pagination/Pagination";
 import NoteList from "@/components/NoteList/NoteList";
 import Link from "next/link";
-import css from "./Notes.client.module.css"; 
+import css from "./NotePage.module.css"; 
 
 export interface NotesClientProps {
   initialTag: NoteTag | "All";
