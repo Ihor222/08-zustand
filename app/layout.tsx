@@ -4,7 +4,6 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { Roboto } from "next/font/google";
 
-
 export const metadata: Metadata = {
   title: "NoteHub – Simple Notes Manager",
   description:
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
     title: "NoteHub – Simple Notes Manager",
     description:
       "NoteHub helps you organize your personal notes and access them easily from anywhere.",
-    url: "/", 
+    url: "/",
     images: [
       {
         url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
@@ -26,10 +25,10 @@ export const metadata: Metadata = {
 };
 
 const roboto = Roboto({
-  weight: ["400", "500", "700"], 
-  subsets: ["latin"], 
-  display: "swap", 
-  variable: "--font-roboto", 
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
 });
 
 export default function RootLayout({
@@ -41,7 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${roboto.variable} ${roboto.className}`}>
         <TanStackProvider>
           <Header />
           <main>{children}</main>
