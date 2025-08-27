@@ -13,7 +13,6 @@ const defaultNote: NewNote = {
   content: "",
   tag: "Todo",
 };
-
 export const useDraftStore = create<DraftState>()(
   persist(
     (set) => ({
