@@ -1,17 +1,17 @@
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/notes/filter/@sidebar/SidebarNotes.module.css ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/notes/filter/@sidebar/SideBarNotes.module.css ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************/
-.SidebarNotes_menuList__Yhyla {
+.SideBarNotes_menuList__wtBlz {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.SidebarNotes_menuItem__cns9_ {
+.SideBarNotes_menuItem__mprzH {
     margin-bottom: 16px;
 }
 
-.SidebarNotes_menuLink__EGPS_ {
+.SideBarNotes_menuLink__f5clH {
     text-decoration: none;
     color: white;
     font-size: 16px;
@@ -20,7 +20,7 @@
     transition: background-color 0.3s ease;
 }
 
-.SidebarNotes_menuLink__EGPS_:hover {
+.SideBarNotes_menuLink__f5clH:hover {
     background-color: #444;
     color: #ddd;
 }

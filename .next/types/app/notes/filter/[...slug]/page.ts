@@ -1,4 +1,4 @@
-// File: /Users/ihor/Desktop/Work/07-routing-nextjs/app/notes/filter/[...slug]/page.tsx
+// File: /Users/ihor/Desktop/Work/08-zustand/app/notes/filter/[...slug]/page.tsx
 import * as entry from '../../../../../../app/notes/filter/[...slug]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
