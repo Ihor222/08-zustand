@@ -5,7 +5,6 @@ import { createNote, type NewNote } from "../../lib/api";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import * as Yup from "yup";
 
-
 type TagType = "Todo" | "Work" | "Personal" | "Meeting" | "Shopping";
 
 interface FormValues {
@@ -26,7 +25,13 @@ const validationSchema = Yup.object({
     .max(50, "Too Long!")
     .required("Required field"),
   content: Yup.string().max(500, "Too Long!"),
-  tag: Yup.mixed<TagType>().oneOf(["Todo", "Work", "Personal", "Meeting", "Shopping"]),
+  tag: Yup.mixed<TagType>().oneOf([
+    "Todo",
+    "Work",
+    "Personal",
+    "Meeting",
+    "Shopping",
+  ]),
 });
 
 interface NoteFormProps {
@@ -46,7 +51,13 @@ export default function NoteForm({ onCloseModal }: NoteFormProps) {
   });
 
   const onSubmit = (values: FormValues) => {
-    mutate(values);
+    // Приводимо дані до типу NewNote
+    const newNote: NewNote = {
+      title: values.title,
+      content: values.content,
+      tag: values.tag,
+    };
+    mutate(newNote);
   };
 
   return (

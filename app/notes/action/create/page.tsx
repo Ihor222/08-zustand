@@ -22,13 +22,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CreateNotePage() {
+export default async function CreateNote() {
   return (
     <main className={css.main}>
       <div className={css.container}>
         <h1 className={css.title}>Create note</h1>
-        {/* Передаємо обов’язковий проп onCloseModal */}
-        <NoteForm onCloseModal={() => {}} />
+        <NoteForm onCloseModal={function (): void {
+                  throw new Error("Function not implemented.");
+              } } />
       </div>
     </main>
   );
