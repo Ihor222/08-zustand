@@ -27,9 +27,7 @@ export default async function CreateNote() {
     <main className={css.main}>
       <div className={css.container}>
         <h1 className={css.title}>Create note</h1>
-        <NoteForm onCloseModal={function (): void {
-                  throw new Error("Function not implemented.");
-              } } />
+        <NoteForm />
       </div>
     </main>
   );

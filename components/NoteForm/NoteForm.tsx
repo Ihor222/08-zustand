@@ -1,8 +1,11 @@
+"use client";
+
 import css from "./NoteForm.module.css";
 import { useId } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { createNote, type NewNote } from "../../lib/api";
+import { createNote, type NewNote } from "@/lib/api"; // можна залишити ../../lib/api, якщо так зручніше
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 import * as Yup from "yup";
 
 type TagType = "Todo" | "Work" | "Personal" | "Meeting" | "Shopping";
@@ -35,29 +38,35 @@ const validationSchema = Yup.object({
 });
 
 interface NoteFormProps {
-  onCloseModal: () => void;
+  onCloseModal?: () => void; 
 }
 
 export default function NoteForm({ onCloseModal }: NoteFormProps) {
   const id = useId();
+  const router = useRouter();
   const queryClient = useQueryClient();
 
   const { mutate, isPending } = useMutation({
     mutationFn: (note: NewNote) => createNote(note),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["notes"] });
-      onCloseModal();
+      
+      onCloseModal ? onCloseModal() : router.back();
     },
   });
 
   const onSubmit = (values: FormValues) => {
-    // Приводимо дані до типу NewNote
     const newNote: NewNote = {
       title: values.title,
       content: values.content,
       tag: values.tag,
     };
     mutate(newNote);
+  };
+
+  const handleCancel = () => {
+   
+    onCloseModal ? onCloseModal() : router.back();
   };
 
   return (
@@ -95,12 +104,7 @@ export default function NoteForm({ onCloseModal }: NoteFormProps) {
 
           <div className={css.formGroup}>
             <label htmlFor={`${id}-tag`}>Tag</label>
-            <Field
-              id={`${id}-tag`}
-              name="tag"
-              as="select"
-              className={css.select}
-            >
+            <Field id={`${id}-tag`} name="tag" as="select" className={css.select}>
               <option value="Todo">Todo</option>
               <option value="Work">Work</option>
               <option value="Personal">Personal</option>
@@ -114,16 +118,12 @@ export default function NoteForm({ onCloseModal }: NoteFormProps) {
             <button
               type="button"
               className={css.cancelButton}
-              onClick={onCloseModal}
+              onClick={handleCancel}
               disabled={isPending}
             >
               Cancel
             </button>
-            <button
-              type="submit"
-              className={css.submitButton}
-              disabled={isPending}
-            >
+            <button type="submit" className={css.submitButton} disabled={isPending}>
               {isPending ? "Creating..." : "Create note"}
             </button>
           </div>
